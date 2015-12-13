@@ -2,6 +2,8 @@
 
 WebDAV client
 
+![](https://raw.githubusercontent.com/mattn/davc/master/data/screenshot.gif)
+
 ## Usage
 
 ```
