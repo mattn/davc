@@ -615,9 +615,9 @@ func main() {
 	}
 
 	switch u.Scheme {
-	case "webdav":
+	case "webdav", "http":
 		u.Scheme = "http"
-	case "webdavs":
+	case "webdavs", "https":
 		u.Scheme = "https"
 	default:
 		u.Scheme = "https"
