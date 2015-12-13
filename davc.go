@@ -182,6 +182,7 @@ func handle(client *gowebdav.Client, cwd *string, args []string) error {
 		} else {
 			return invalidArg
 		}
+		target = path.Clean(target)
 		fis, err := client.ReadDir(target)
 		if err != nil {
 			return err
