@@ -2,14 +2,12 @@ package main
 
 import (
 	"bufio"
-	"crypto/tls"
 	"encoding/json"
 	"errors"
 	"flag"
 	"fmt"
 	"io"
 	"io/ioutil"
-	"net/http"
 	"net/url"
 	"os"
 	"os/exec"
@@ -623,9 +621,6 @@ func main() {
 	default:
 		u.Scheme = "https"
 	}
-
-	// workaround: Disable h2client
-	http.DefaultTransport.(*http.Transport).TLSNextProto = make(map[string]func(string, *tls.Conn) http.RoundTripper)
 
 	client := gowebdav.NewClient(u.Scheme+"://"+u.Host, user, password)
 	err = client.Connect()
